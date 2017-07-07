@@ -1,0 +1,487 @@
+<div class="animated fadeIn">
+  <!--pantalla crear reglas-->
+  <div class="row" >
+    <div class="col-lg-12">
+      <!-- Nav tabs -->
+      <tabset>
+        <!--Inicio de regla-->
+          <tab>
+          <ng-template tabHeading><i class="fa fa-file fa-lg"></i></ng-template>
+                  <div class="row">
+                      <div class="col-md-6">
+                        <div class="card-block">
+                              <div class="form-group row">
+                                <label class="col-sm-4 form-control-label" for="input-small"><strong>Nombre Regla</strong></label>
+                                <div class="col-sm-6">
+                                  <input type="text" id="input-small" name="input-small" class="form-control form-control-sm" placeholder="Nombre Regla" [(ngModel)]="modelObecjtTL.SHORT_DESC">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-sm-4 form-control-label" for="textarea-input">Descripción</label>
+                                <div class="col-sm-6">
+                                  <textarea id="textarea-input" name="textarea-input" rows="2" class="form-control form-control-sm" placeholder="Descripción" [(ngModel)]="modelObecjtTL.LONG_DESC"></textarea>
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+                          <div class="col-md-6">
+                                <div class="card-block">
+                                   <div class="form-group row">
+                                    <label class="col-sm-4 form-control-label" for="select">Carpeta</label>
+                                    <div class="col-sm-6">
+                                      <select id="select" name="select" class="form-control form-control-sm" [(ngModel)]="modelObecjtB.FOLDER_NAME">
+                                          <option *ngFor="let folder of folders">{{folder.V_SEGMENT_NAME}}</option>
+                                       </select>
+                                    </div>
+                                  </div>
+                                  <!--<div class="form-group row">
+                                    <label class="col-sm-4 form-control-label" for="select"><strong>Dimensión</strong></label>
+                                    <div class="col-sm-6">
+                                      <select id="select" name="select" class="form-control form-control-sm">
+                                          <option *ngFor="let dimension of dimensions">{{dimension.dimension_name}}</option>
+                                      </select>
+                                    </div>
+                                  </div>-->
+                                </div>
+                          </div>
+                      </div>
+                        <div class='col-lg-12 '>
+                          <hr>
+                        </div>
+                      <div class="row">
+                          <div class="col-md-6">
+                                <div class="card-block">
+                                    <div class="row">
+                                      <label class="col-md-5 form-control-label"><strong>Tipo de Regla</strong></label>
+                                      <div class="col-md-7">
+                                        <label class="col-md-6 form-control-label"><strong>Descripción</strong></label>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-md-6">
+                                        <div class="radio">
+                                          <label for="radio1">
+                                            <input type="radio" checked="checked" id="radio1" name="radios" value="option1"> Regla Operador Dinamico
+                                          </label>
+                                        </div>
+                                      </div>
+                                      <label class="col-sm-5 form-control-label">Chamuyo 1</label>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-sm-6">
+                                        <div class="radio">
+                                          <label for="radio1">
+                                            <input type="radio" id="radio1" name="radios" value="option2"> Regla Operador Estatico
+                                          </label>
+                                        </div>
+                                      </div>
+                                      <label class="col-sm-5 form-control-label">Chamuyo 2</label>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-sm-6">
+                                        <div class="radio">
+                                          <label for="radio1">
+                                            <input type="radio" id="radio1" name="radios" value="option3"> Regla Valor Constante
+                                          </label>
+                                        </div>
+                                      </div>
+                                      <label class="col-sm-5 form-control-label">Chamuyo 3</label>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-sm-6">
+                                        <div class="radio">
+                                          <label for="radio1">
+                                            <input type="radio" id="radio1" name="radios" value="option4"> Regla hojas
+                                          </label>
+                                        </div>
+                                      </div>
+                                      <label class="col-sm-5 form-control-label">Chamuyo 4</label>
+                                    </div>
+                                  </div>
+                          </div>
+                      </div>
+                      <div class='col-lg-12 '>
+                          <hr>
+                      </div>
+                       <div class="row">
+                          <div class="col-md-12">
+                                <div class="card-block">
+                                  <div class="form-actions">
+                                    <button type="submit" class="btn btn-danger btn-sm icon-magnifier"> Guardar</button>
+                                    <button class="btn btn-danger btn-sm icon-refresh" type="button"> Cancelar</button>
+                                    <button class="btn btn-danger btn-sm icon-refresh" type="button"> Siguiente</button>
+                                  </div>
+                                </div>
+                          </div>
+                       </div>
+         </tab>
+       <!--Fin inicio de regla-->
+        <tab>
+          <!--Inicio Source-->
+          <ng-template tabHeading><i class="fa fa-sign-out fa-lg"></i></ng-template>
+                  <div class="row">
+                      <div class="col-md-6">
+                        <div class="card-block">
+                            <div class="form-group row">
+                                <label class="col-sm-4 form-control-label" for="input-small"><strong>Nombre Regla</strong></label>
+                                <div class="col-sm-6">
+                                  <input type="text" id="input-small" name="input-small" class="form-control form-control-sm" placeholder="Nombre Regla" [(ngModel)]="modelObecjtTL.SHORT_DESC">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-sm-4 form-control-label" for="textarea-input">Descripción</label>
+                                <div class="col-sm-6">
+                                  <textarea id="textarea-input" name="textarea-input" rows="2" class="form-control form-control-sm" placeholder="Descripción" [(ngModel)]="modelObecjtTL.LONG_DESC"></textarea>
+                                </div>
+                              </div>
+                            </div>
+                      </div>
+                          <div class="col-md-6">
+                                <div class="card-block" >
+                                   <div class="form-group row">
+                                    <label class="col-sm-4 form-control-label" for="select">Carpeta</label>
+                                    <div class="col-sm-6">
+                                      <select id="select" name="select" class="form-control form-control-sm" [(ngModel)]="modelObecjtB.FOLDER_NAME">
+                                        <!--<option template="ngFor let folder of folders">{{folder.V_SEGMENT_NAME}}</option>-->
+                                          <option *ngFor="let folder of folders">{{folder.V_SEGMENT_NAME}}</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                </div>
+                          </div>
+                      </div>
+                        <div class='col-lg-12'>
+                          <hr>
+                        </div>
+                      <div class="row">
+                      <div class="col-md-6">
+                        <div class="card-block">
+                             <div class="form-group row">
+                                  <label class="col-sm-4 form-control-label" for="select">Nombre Tabla</label>
+                                  <div class="col-sm-6">
+                                    <select id="select" name="select" class="form-control form-control-sm" [(ngModel)]="modelObecjtB.TABLE_NAME">
+                                       <!--<option *ngFor="let table of tables">{{table.table_name}}</option>-->
+                                         <option *ngFor="let table of tables">{{table.display_name}}</option>
+                                    </select>
+                                  </div>
+                                </div>
+                               <div class="form-group row" *ngIf="ColumnExpresionSelect">
+                                  <label class="col-sm-4 form-control-label" for="select">Nombre Columna</label>
+                                  <div class="col-sm-6">
+                                    <select id="select" name="select" class="form-control form-control-sm" [(ngModel)]="modelObecjtB.COLUMN_NAME">
+                                       <option *ngFor="let column of columns">{{column.display_name}}</option>
+                                      <!--<option template="ngFor let dimension of dimensions">{{dimension.dimension_name}}</option>-->
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="form-group row" *ngIf="!ColumnExpresionSelect">
+                                  <label class="col-sm-4 form-control-label" for="select">Carpeta</label>
+                                  <div class="col-sm-6">
+                                    <select id="select" name="select" class="form-control form-control-sm" [(ngModel)]="modelObecjtB.FOLDER_NAME">
+                                      <!--<option template="ngFor let folder of folders">{{folder.V_SEGMENT_NAME}}</option>-->
+                                        <option *ngFor="let folder of folders">{{folder.V_SEGMENT_NAME}}</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              
+                          
+                          </div>
+                      </div>
+                          <div class="col-md-6">
+                                <div class="card-block">
+                                    <div class="form-group row">
+                                      <label class="col-md-3 form-control-label">Columna/Expresión</label>
+                                      <div class="col-md-9">
+                                        <label class="radio-inline" for="inline-radio1">
+                                          <input type="radio" id="inline-radio1" name="inline-radios1" value="column" checked="checked" (click)="setColumnExpresion(true)"> Columna
+                                        </label>
+                                        <label class="radio-inline" for="inline-radio1">
+                                          <input type="radio" id="inline-radio1" name="inline-radios1" value="expresion" (click)="setColumnExpresion(false)"> Expresión
+                                        </label>
+                                      </div>
+                                    </div>
+                                    <div class="form-group row" *ngIf="!ColumnExpresionSelect">
+                                      <label class="col-sm-4 form-control-label" for="select">Expresion</label>
+                                      <div class="col-sm-6">
+                                        <select id="select" name="select" class="form-control form-control-sm" [(ngModel)]="modelObecjtB.FOLDER_NAME">
+                                          <!--<option template="ngFor let folder of folders">{{folder.V_SEGMENT_NAME}}</option>-->
+                                            <option *ngFor="let folder of folders">{{folder.V_SEGMENT_NAME}}</option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                </div>
+                          </div>
+                      </div>
+                      <div class='col-lg-12 '>
+                          <hr>
+                        </div>
+                      <div class="row">
+                             <div class="card-block">
+                                  <table class="table table-bordered table-striped table-sm">
+                                    <thead>
+                                      <tr>
+                                        <th>Dimensión</th>
+                                        <th>Valor</th>
+                                        <th>Descripción</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr template="ngFor let dimension of dimensions" >
+                                        <td>{{dimension.dimension_name}}</td>
+                                        <td>all</td>
+                                        <td>descripcion</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                              </div>
+                      </div>
+                      <div class='col-lg-12 '>
+                          <hr>
+                        </div>
+                      <div class="row">
+                          <div class="col-md-9">
+                                <div class="card-block">
+                                    <div class="form-group row">
+                                      <label class="col-md-3 form-control-label">Tipo de Filtro</label>
+                                      <div class="col-md-9">
+                                        <label class="radio-inline" for="inline-radio2">
+                                          <input type="radio" id="inline-radio2" name="filtro" value="SinFiltro" checked="checked" (click)="setFiltro(filtro.value)"> Sin filtro
+                                        </label>
+                                        <label class="radio-inline" for="inline-radio2">
+                                          <input type="radio" id="inline-radio2" name="filtro" value="FiltroDatos" (click)="setFiltro(filtro.value)"> Filtro de Datos
+                                        </label>
+                                        <label class="radio-inline" for="inline-radio2">
+                                          <input type="radio" id="inline-radio2" name="filtro" value="FiltroAtributo" (click)="setFiltro(filtro.value)"> Filtro de Atributo
+                                        </label>
+                                        <label class="radio-inline" for="inline-radio2">
+                                          <input type="radio" id="inline-radio2" name="filtro" value="GrupoFiltros" (click)="setFiltro(filtro.value)"> Grupo de Filtros
+                                        </label>
+                                      </div>
+                                    </div>
+                                  
+                                </div>
+                          </div>
+                          <div class="col-md-12">
+                                 <div class="row">
+                                    <div class="col-md-6">
+                                            <div class="card-block" >
+                                              <div class="form-group row" *ngIf="selectFiltro">
+                                                <label class="col-sm-4 form-control-label" for="select">Carpeta</label>
+                                                <div class="col-sm-6">
+                                                  <select id="select" name="select" class="form-control form-control-sm" [(ngModel)]="modelObecjtB.FOLDER_NAME">
+                                                    <!--<option template="ngFor let folder of folders">{{folder.V_SEGMENT_NAME}}</option>-->
+                                                      <option *ngFor="let folder of folders">{{folder.V_SEGMENT_NAME}}</option>
+                                                  </select>
+                                                </div>
+                                              </div>
+                                            </div>
+                                      </div>
+                                      <div class="col-md-6">
+                                              <div class="card-block" >
+                                                <div class="form-group row" *ngIf="selectFiltro">
+                                                  <label class="col-sm-4 form-control-label" for="select">{{tipo_filtro}}</label>
+                                                  <div class="col-sm-6">
+                                                    <select id="select" name="select" class="form-control form-control-sm" [(ngModel)]="modelObecjtB.FOLDER_NAME">
+                                                      <!--<option template="ngFor let folder of folders">{{folder.V_SEGMENT_NAME}}</option>-->
+                                                        <option *ngFor="let folder of folders">{{folder.V_SEGMENT_NAME}}</option>
+                                                    </select>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                        </div>
+                                 </div>
+                          </div>
+                      </div>
+                      <div class='col-lg-12 '>
+                          <hr>
+                      </div>
+                       <div class="row">
+                          <div class="col-md-12">
+                                <div class="card-block">
+                                  <div class="form-actions">
+                                    <button type="submit" class="btn btn-danger btn-sm icon-magnifier"> Guardar</button>
+                                    <button class="btn btn-danger btn-sm icon-refresh" type="button"> Cancelar</button>
+                                    <button class="btn btn-danger btn-sm icon-refresh" type="button"> Siguiente</button>
+                                  </div>
+                                </div>
+                          </div>
+                       </div>
+        </tab>
+        <!--Fin Source-->
+        <!--Inicio Operacion-->
+        <tab>
+          <ng-template tabHeading><i class="fa fa-cogs fa-lg"></i></ng-template>
+                  <div class="row">
+                      <div class="col-md-6">
+                        <div class="card-block">
+                            <div class="form-group row">
+                                <label class="col-sm-4 form-control-label" for="input-small"><strong>Nombre Regla</strong></label>
+                                <div class="col-sm-6">
+                                  <input type="text" id="input-small" name="input-small" class="form-control form-control-sm" placeholder="Nombre Regla" [(ngModel)]="modelObecjtTL.SHORT_DESC">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-sm-4 form-control-label" for="textarea-input">Descripción</label>
+                                <div class="col-sm-6">
+                                  <textarea id="textarea-input" name="textarea-input" rows="2" class="form-control form-control-sm" placeholder="Descripción" [(ngModel)]="modelObecjtTL.LONG_DESC"></textarea>
+                                </div>
+                              </div>
+                              
+                          
+                          </div>
+                      </div>
+                          <div class="col-md-6">
+                                <div class="card-block">
+                                   <div class="form-group row">
+                                    <label class="col-sm-4 form-control-label" for="select">Carpeta</label>
+                                    <div class="col-sm-6">
+                                      <select id="select" name="select" class="form-control form-control-sm">
+                                        <!--<option template="ngFor let folder of folders">{{folder.V_SEGMENT_NAME}}</option>-->
+                                          <option *ngFor="let folder of folders">{{folder.V_SEGMENT_NAME}}</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                </div>
+                          </div>
+                      </div>
+                        <div class='col-lg-12 '>
+                          <hr>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                                <div class="card-block">
+                                    <div class="form-group row">
+                                      <label class="col-md-3 form-control-label">Tipo de Filtro</label>
+                                      <div class="col-md-9">
+                                        <label class="radio-inline" for="inline-radio1">
+                                          <input type="radio" id="inline-radio1" name="inline-radios" value="option1"> Sin filtro
+                                        </label>
+                                        <label class="radio-inline" for="inline-radio2">
+                                          <input type="radio" id="inline-radio2" name="inline-radios" value="option2"> Filtro de dato
+                                        </label>
+                                        <label class="radio-inline" for="inline-radio2">
+                                          <input type="radio" id="inline-radio2" name="inline-radios" value="option2"> Filtro de atributo
+                                        </label>
+                                        <label class="radio-inline" for="inline-radio2">
+                                          <input type="radio" id="inline-radio2" name="inline-radios" value="option2"> Grupo de filtro
+                                        </label>
+                                      </div>
+                                    </div>
+                                  
+                                </div>
+                          </div>
+                      </div>
+                      <div class='col-lg-12 '>
+                          <hr>
+                        </div>
+                      <div class="row">
+                          <div class="col-md-6">
+                                <div class="card-block">
+                                    <div class="form-group row">
+                                      <label class="col-md-3 form-control-label">Tipo de Filtro</label>
+                                      <div class="col-md-9">
+                                        <label class="radio-inline" for="inline-radio1">
+                                          <input type="radio" id="inline-radio1" name="inline-radios" value="option1"> Sin filtro
+                                        </label>
+                                        <label class="radio-inline" for="inline-radio2">
+                                          <input type="radio" id="inline-radio2" name="inline-radios" value="option2"> Filtro de dato
+                                        </label>
+                                        <label class="radio-inline" for="inline-radio2">
+                                          <input type="radio" id="inline-radio2" name="inline-radios" value="option2"> Filtro de atributo
+                                        </label>
+                                        <label class="radio-inline" for="inline-radio2">
+                                          <input type="radio" id="inline-radio2" name="inline-radios" value="option2"> Grupo de filtro
+                                        </label>
+                                      </div>
+                                    </div>
+                                  
+                                </div>
+                          </div>
+                      </div>
+        </tab>
+        <!--Fin Operacion-->
+        <!--Inicio Driver-->
+        <tab>
+          <ng-template tabHeading><i class="fa fa-filter fa-lg"></i></ng-template>
+                <div class="row">
+                      <div class="col-md-6">
+                        <div class="card-block">
+                            <div class="form-group row">
+                                <label class="col-sm-4 form-control-label" for="input-small"><strong>Nombre Regla</strong></label>
+                                <div class="col-sm-6">
+                                  <input type="text" id="input-small" name="input-small" class="form-control form-control-sm" placeholder="Nombre Regla" [(ngModel)]="modelObecjtTL.SHORT_DESC">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-sm-4 form-control-label" for="textarea-input">Descripción</label>
+                                <div class="col-sm-6">
+                                  <textarea id="textarea-input" name="textarea-input" rows="2" class="form-control form-control-sm" placeholder="Descripción" [(ngModel)]="modelObecjtTL.LONG_DESC"></textarea>
+                                </div>
+                              </div>
+                              
+                          
+                          </div>
+                      </div>
+                          <div class="col-md-6">
+                                <div class="card-block">
+                                   <div class="form-group row">
+                                    <label class="col-sm-4 form-control-label" for="select">Carpeta</label>
+                                    <div class="col-sm-6">
+                                      <select id="select" name="select" class="form-control form-control-sm">
+                                        <!--<option template="ngFor let folder of folders">{{folder.V_SEGMENT_NAME}}</option>-->
+                                          <option *ngFor="let folder of folders">{{folder.V_SEGMENT_NAME}}</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                </div>
+                          </div>
+                      </div>
+                        <div class='col-lg-12 '>
+                          <hr>
+                        </div>
+        </tab>
+        <!--Fin Driver-->
+        <!--Inicio OutPut-->
+        <tab>
+          <ng-template tabHeading><i class="fa fa-file-code-o fa-lg"></i></ng-template>
+                  <div class="row">
+                      <div class="col-md-6">
+                        <div class="card-block">
+                            <div class="form-group row">
+                                <label class="col-sm-4 form-control-label" for="input-small"><strong>Nombre Regla</strong></label>
+                                <div class="col-sm-6">
+                                  <input type="text" id="input-small" name="input-small" class="form-control form-control-sm" placeholder="Nombre Regla" [(ngModel)]="modelObecjtTL.SHORT_DESC">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-sm-4 form-control-label" for="textarea-input">Descripción</label>
+                                <div class="col-sm-6">
+                                  <textarea id="textarea-input" name="textarea-input" rows="2" class="form-control form-control-sm" placeholder="Descripción" [(ngModel)]="modelObecjtTL.LONG_DESC"></textarea>
+                                </div>
+                              </div>
+                              
+                          
+                          </div>
+                      </div>
+                          <div class="col-md-6">
+                                <div class="card-block">
+                                   <div class="form-group row">
+                                    <label class="col-sm-4 form-control-label" for="select">Carpeta</label>
+                                    <div class="col-sm-6">
+                                      <select id="select" name="select" class="form-control form-control-sm">
+                                        <option *ngFor="let folder of folders">{{folder.V_SEGMENT_NAME}}</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                </div>
+                          </div>
+                      </div>
+                        <div class='col-lg-12 '>
+                          <hr>
+                        </div>
+        </tab>
+        <!--Fin OutPut-->
+      </tabset>
+    </div><!--/.col-->
+  </div>
+</div>
